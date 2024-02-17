@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Require",
+      "Action": "iam:EnableMFADevice",
+      "Resource": "arn:aws:iam::533267083873:mfa/${aws:username}",
+      "Condition": {
+        "Bool": {
+          "aws:MultiFactorAuthPresent": "false"
+        }
+      }
+    }
+  ]
+}
